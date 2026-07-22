@@ -124,25 +124,25 @@ let b = 10;
 
 // 3. What are the main differences between == and ===? (0.5 Grade)
 // == take type and === take value and type both.
-5 == "5"; // true  (Types converted)
-5 === "5";
 
 // 4. Explain how try-catch works and why it is important in async operations. (0.5 Grade)
-// How it works: The try block contains code that might throw an error. If an error occurs,
-// code execution in try stops and control is passed to the catch block to handle the error gracefully without breaking the application.
 
-// Importance in async operations: Asynchronous operations (like API calls or file fetching) can fail due to network errors,
-// server issues, or invalid responses.
-// Using try-catch with async/await prevents the application from crashing and allows us to handle failures cleanly (e.g., displaying error messages to the user).
-async function fetchData() {
+// The try block runs the code that might have an error.
+// If an error happens, it stops the try block and goes to the catch block to handle it so the app doesn't crash.
+
+// Importance in async operations:
+// Async actions (like fetching data) can fail if there is a connection problem or bad data.
+// Using try-catch helps us catch those errors safely and show a message to the user instead of breaking the code.
+
+async function loadData() {
   try {
-    let response = await fetch("https://api.example.com/data");
-    let data = await response.json();
-    return data;
+    let result = await checkUser(0); // If this fails, catch will handle it
+    console.log(result);
   } catch (error) {
-    console.error("Failed to fetch data:", error);
+    console.log("Something went wrong:", error.message);
   }
 }
+
 // 5. What’s the difference between type conversion and coercion? Provide examples of each. (0.5 Grade)
 
 // the difference between type conversion and coercion is : conversion change the type variable or value into a number
