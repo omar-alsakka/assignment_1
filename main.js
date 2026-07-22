@@ -150,7 +150,7 @@ async function loadData() {
 
 // example for conversion :
 // let x = '123';
-// let y = number(x)
+// let y = Number(x)
 
 // example for coercion :
 // let a = ('9' + '3') // = 93
